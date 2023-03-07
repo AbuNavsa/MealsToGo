@@ -7,7 +7,7 @@ const sizeVariant = {
   large: 3,
 };
 
-const positionsVariant = {
+const positionVariant = {
   top: "marginTop",
   left: "marginLeft",
   right: "marginRight",
@@ -16,7 +16,7 @@ const positionsVariant = {
 
 const getVariant = (position, size, theme) => {
   const sizeIndex = sizeVariant[size];
-  const property = positionsVariant[position];
+  const property = positionVariant[position];
   const value = theme.space[sizeIndex];
 
   return `${property}:${value}`;
