@@ -25,12 +25,18 @@ const Item = styled.View`
 
 const isAndroid = Platform.OS === "android";
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
-  const Image = isAndroid ? CompactWebview : CompactImage;
+export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
+  const Image = isAndroid && isMap ? CompactWebview : CompactImage;
 
   return (
     <Item>
-      <Image source={{ uri: restaurant.photos[0] }} />
+      {/* <Image source={{ uri: restaurant.photos[0] }} /> */}
+      <Image
+        source={{
+          uri:
+            "https://www.foodiesfeed.com/wp-content/uploads/2019/04/mae-mu-pancakes-600x750.jpg",
+        }}
+      />
       <Text center variant="caption" numberOfLines={3}>
         {restaurant.name}
       </Text>
